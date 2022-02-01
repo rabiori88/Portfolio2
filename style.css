@@ -1,0 +1,13 @@
+
+
+:root {
+    --font-size: 8px;
+    --background-color: rgb(75, 151, 218);
+
+}
+.first-list {
+    background-color: var(--background-color);
+    
+    font-size: var(--font-size);
+
+}
