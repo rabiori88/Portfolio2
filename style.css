@@ -542,5 +542,23 @@
         }
     }
 
+    .arrow__btn {
+       
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        font-size: 50px;
+        opacity: 0;
+        background-color: var(--color-pink);
+        color: var(--color-white);
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        transition: all var(--animation-duration) ease-in;
+        pointer-events: none;
+    }
 
-   
+    .arrow__btn.visible {
+        pointer-events:  auto;
+        opacity: 1;
+    }

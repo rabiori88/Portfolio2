@@ -10,11 +10,11 @@ document.addEventListener('scroll', ()=> {
     
     if(window.scrollY > navbarHeight){ 
         navbar.classList.add('navbar--dark');
-        home.classList.add('home--fadeout');
+        
         
     } else {
         navbar.classList.remove('navbar--dark');
-        home.classList.remove('home--fadeout');
+        
     }
 });
 
@@ -45,6 +45,25 @@ document.addEventListener('scroll', ()=> {
     home.style.opacity = 1 - window.scrollY / homeHeight; 
 
 });
+
+// Show "arrow btn " when scrolling down
+const arrowBtn = document.querySelector('.arrow__btn');
+document.addEventListener('scroll', (event) => {
+    if(window.scrollY > navbarHeight){ 
+        arrowBtn.classList.add('visible');
+        
+        
+    } else {
+        arrowBtn.classList.remove('visible');
+        
+    }
+    
+});
+
+arrowBtn.addEventListener('click', () => {
+    scrollIntoView('#home');
+
+})
 
 
 function scrollIntoView(selector) {
