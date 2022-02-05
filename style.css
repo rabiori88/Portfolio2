@@ -177,6 +177,9 @@
         color: var(--color-white);
     }
 
+    .home__contact:hover {
+        background-color: var(--color-orange);
+    }
     .home__contact {
         color: var(--color-white);
         font-size: var(--font-regular);
@@ -190,7 +193,8 @@
 
     /* Section common */
     .section {
-        padding: 50px;
+        padding: 16px;
+        padding-top: 40px;
         text-align: center;
         
         margin: auto;
@@ -336,7 +340,7 @@
     .category__btn.selected .category__count,
     .category__btn:hover .category__count {
         opacity: 1;
-        top: 0;
+        top: 5px;
     }
 
     .category__count {
@@ -347,9 +351,9 @@
         height: 24px;
         line-height: 24px;
         display: inline-block;        
-        position: relative;
-        top: -20px;
-        left: 4px;
+        position: absolute;
+        top: -15px;
+        right: 16px;
         opacity: 0;
         transition: all var(--animation-duration) ease-in;
     }
@@ -359,6 +363,7 @@
         border: 1px solid var(--color-dark-white);
         font-size: var(--font-regular);
         padding: 8px 48px;
+        position: relative;
     }
 
     .work__projects {
@@ -516,11 +521,45 @@
         transform: scale(1.1);
         color: var(--color-yellow);
     }
+
+    .arrow__btn {
+       
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        font-size: 50px;
+        opacity: 0;
+        background-color: var(--color-pink);
+        color: var(--color-white);
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        transition: all var(--animation-duration) ease-in;
+        pointer-events: none;
+    }
+
+    .arrow__btn.visible {
+        pointer-events:  auto;
+        opacity: 1;
+    }
+
     
     /* For below 768px screen width */
     @media screen and (max-width: 768px) {
+        :root {
+                /* Font size */
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+        }
+
         .navbar__toggle-btn {
             display: block;
+            top: 16px;
+            right: 16px;
+            font-size: medium;
         }
         #navbar {
             flex-direction: column;
@@ -545,43 +584,54 @@
 
         .about__majors {
             flex-direction: column;
+            margin-top: 30px;
+            margin-bottom: 0px;
         }
 
         .major {
-            margin-bottom: 38px;
+            margin-bottom: 30px;
         }
 
         .skillset {
             flex-direction: column;
         }
 
+        .category__btn {
+            margin: 4px 0 ;
+            
+        }
         .project {
             flex-grow: 1;
         }
 
+        .testimonial {
+            flex-direction: column;
+            align-items: center;
+        }
         .testimonial_avatar {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
+            
+        }
+
+        .testimonial__speech-bubble {
+            order: 1;
+        }
+
+        .testimonial_avatar:nth-child(odd),        
+        .testimonial_avatar:nth-child(even){
+            margin: 0px;
+            margin-bottom: 8px;
+        }
+
+        .arrow__btn {
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+            bottom: 16px;
+            right: 16px;
+            line-height: 40px;
         }
     }
 
-    .arrow__btn {
-       
-        position: fixed;
-        bottom: 50px;
-        right: 50px;
-        font-size: 50px;
-        opacity: 0;
-        background-color: var(--color-pink);
-        color: var(--color-white);
-        border-radius: 50%;
-        width: 70px;
-        height: 70px;
-        transition: all var(--animation-duration) ease-in;
-        pointer-events: none;
-    }
-
-    .arrow__btn.visible {
-        pointer-events:  auto;
-        opacity: 1;
-    }
+   
